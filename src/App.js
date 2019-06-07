@@ -30,7 +30,7 @@ const App = props => {
     })
   };
   const style = {
-    backgroundColor: 'skyblue',
+    backgroundColor: 'silver',
     font: 'inherit',
     cursor: 'pointer'
   };
