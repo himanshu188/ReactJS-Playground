@@ -45,25 +45,29 @@ const App = props => {
         showPersons: !doesShow
       })
   };
+
+  let persons = null
+  if(personsState.showPersons){
+    persons = (
+      <div>
+        <Person
+          name={personsState.persons[0].name}
+          age={personsState.persons[0].age}
+          click={switchNameHandler.bind(this, 'sudhanshu')}
+          changed={nameChangeHandler} />
+        <Person
+          name={personsState.persons[1].name} age={personsState.persons[1].age}>My hobbies: Hacking</Person>
+    </div>
+    )
+  }
   return(
     // React.createElement('div', null, React.createElement('h1', null, 'Hi, This is my First React App'))
     <div className="App">
       <button
         style={style}
         onClick={() => togglePersonHandler()}>Switch Name</button>
-      { personsState.showPersons === true ?
-          <div>
-            <Person
-              name={personsState.persons[0].name}
-              age={personsState.persons[0].age}
-              click={switchNameHandler.bind(this, 'sudhanshu')}
-              changed={nameChangeHandler} />
-            <Person
-              name={personsState.persons[1].name} age={personsState.persons[1].age}>My hobbies: Hacking</Person>
-          </div> : null
-      }
-      </div>
-
+      {persons}
+    </div>
   );
 }
 export default App;
