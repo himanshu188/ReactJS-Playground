@@ -35,56 +35,35 @@ const App = props => {
     font: 'inherit',
     cursor: 'pointer'
   };
-  const togglePersonHandler = () => {
-      const doesShow = this.state.showPersons
-      this.setState({showPersons: !doesShow})
+  const togglePersonHandler = (props) => {
+      const doesShow = personsState.showPersons
+      setPersonsState({
+        persons: [
+          { name: 'himanshu', age:23},
+          { name: 'john', age:24}
+        ],
+        showPersons: !doesShow
+      })
   };
   return(
     // React.createElement('div', null, React.createElement('h1', null, 'Hi, This is my First React App'))
     <div className="App">
       <button
         style={style}
-        onClick={() => this.togglePersonHandler}>Switch Name</button>
-
-      { this.state.showPersons ?
-        <div>
-          <Person
-            name={personsState.persons[0].name}
-            age={personsState.persons[0].age}
-            click={switchNameHandler.bind(this, 'sudhanshu')}
-            changed={nameChangeHandler} />
-          <Person
-            name={personsState.persons[1].name} age={personsState.persons[1].age}>My hobbies: Hacking</Person>
-        </div> : null
+        onClick={() => togglePersonHandler()}>Switch Name</button>
+      { personsState.showPersons === true ?
+          <div>
+            <Person
+              name={personsState.persons[0].name}
+              age={personsState.persons[0].age}
+              click={switchNameHandler.bind(this, 'sudhanshu')}
+              changed={nameChangeHandler} />
+            <Person
+              name={personsState.persons[1].name} age={personsState.persons[1].age}>My hobbies: Hacking</Person>
+          </div> : null
       }
-  </div>
+      </div>
 
   );
 }
 export default App;
-
-// function App() {
-//   return (
-
-    // React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Hi, This is my First React App'))
-      // <header className="App-header">
-      //   <img src={logo} className="App-logo" alt="logo" />
-      //   <p>
-      //     Edit <code>src/App.js</code> and save to reload.
-      //   </p>
-      //   <a
-      //     className="App-link"
-      //     href="https://reactjs.org"
-      //     target="_blank"
-      //     rel="noopener noreferrer"
-      //   >
-      //     Learn React
-      //   </a>
-      // </header>
-
-    // <h1> My First React App </h1>
-//   );
-// }
-
-
-// state =
