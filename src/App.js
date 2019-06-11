@@ -8,7 +8,8 @@ const App = props => {
     persons: [
       { name: 'himanshu', age:23},
       { name: 'john', age:24}
-    ]
+    ],
+    showPersons: false
   });
 
   const [ otherState, setOtherState] = useState('any value');
@@ -30,28 +31,33 @@ const App = props => {
     })
   };
   const style = {
-<<<<<<< HEAD
-    backgroundColor: 'blue',
-=======
     backgroundColor: 'silver',
->>>>>>> unstable
     font: 'inherit',
     cursor: 'pointer'
+  };
+  const togglePersonHandler = () => {
+      const doesShow = this.state.showPersons
+      this.setState({showPersons: !doesShow})
   };
   return(
     // React.createElement('div', null, React.createElement('h1', null, 'Hi, This is my First React App'))
     <div className="App">
       <button
         style={style}
-        onClick={() => switchNameHandler('himanshu')}>Switch Name</button>
-      <Person
-        name={personsState.persons[0].name}
-        age={personsState.persons[0].age}
-        click={switchNameHandler.bind(this, 'sudhanshu')}
-        changed={nameChangeHandler} />
-      <Person
-        name={personsState.persons[1].name} age={personsState.persons[1].age}>My hobbies: Hacking</Person>
-    </div>
+        onClick={() => this.togglePersonHandler}>Switch Name</button>
+
+      { this.state.showPersons ?
+        <div>
+          <Person
+            name={personsState.persons[0].name}
+            age={personsState.persons[0].age}
+            click={switchNameHandler.bind(this, 'sudhanshu')}
+            changed={nameChangeHandler} />
+          <Person
+            name={personsState.persons[1].name} age={personsState.persons[1].age}>My hobbies: Hacking</Person>
+        </div> : null
+      }
+  </div>
 
   );
 }
