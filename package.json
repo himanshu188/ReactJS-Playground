@@ -3,9 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
-    "create-react-app": "^3.0.1",
-=======
     "@babel/core": "7.4.3",
     "@svgr/webpack": "4.1.0",
     "@typescript-eslint/eslint-plugin": "1.6.0",
@@ -45,7 +42,6 @@
     "postcss-normalize": "7.0.1",
     "postcss-preset-env": "6.6.0",
     "postcss-safe-parser": "4.0.1",
->>>>>>> unstable
     "radium": "^0.25.2",
     "react": "^16.8.6",
     "react-app-polyfill": "^1.0.1",
