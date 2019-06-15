@@ -1,9 +1,8 @@
 import React from 'react';
-import './Person.css';
-import Radium from 'radium';
+import classes from './Person.css';
 const person = (props) => {
   return (
-    <div className="Person">
+    <div className={classes.Person}>
       <p onClick={props.click}> I'm {props.name} and I'm {props.age} year old !</p>
       <p>{props.children}</p>
       <input type="text" onChange={props.changed} value={props.name}></input>
@@ -11,4 +10,4 @@ const person = (props) => {
   )
 }
 
-export default Radium(person);
+export default person;
