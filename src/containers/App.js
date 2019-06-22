@@ -42,7 +42,7 @@ class App extends Component{
 
     person.name = event.target.value;
     const persons = [...this.state.persons];
-    person[personIndex] = person
+    persons[personIndex] = person
     this.setState({ persons: persons})
   }
   togglePersonHandler = () => {
